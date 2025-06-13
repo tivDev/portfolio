@@ -79,6 +79,58 @@
       margin: 0 auto;
     }
 
+    /* About Me Section */
+    .about-me {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .about-me-content {
+      flex: 1;
+    }
+
+    .about-me-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-me-name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .about-me-description {
+      color: var(--subtext);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .about-me-avatar {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-light);
+      box-shadow: var(--shadow);
+    }
+
+    .about-me-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
     .tabs {
       display: flex;
       justify-content: center;
@@ -253,10 +305,33 @@
     }
 
     /* Timeline Section */
+    .timeline-section {
+      margin-bottom: 4rem;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 3rem 0 1.5rem;
+      color: var(--text);
+      text-align: center;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), #4cc9f0);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
     .timeline {
       position: relative;
       max-width: 800px;
-      margin: 0 auto 4rem;
+      margin: 0 auto;
     }
 
     .timeline::after {
@@ -415,6 +490,16 @@
         font-size: 1.75rem;
       }
       
+      .about-me {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+      }
+      
+      .about-me-actions {
+        justify-content: center;
+      }
+      
       .skills-container {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       }
@@ -474,6 +559,10 @@
         gap: 0.75rem;
       }
       
+      .about-me-actions {
+        flex-direction: column;
+      }
+      
       .btn {
         width: 100%;
       }
@@ -483,6 +572,33 @@
 
 <body>
   <div class="container">
+    
+        <!-- About Me Section -->
+    <section class="about-me">
+      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Profile Picture" class="about-me-avatar">
+      <div class="about-me-content">
+        <h3 class="about-me-title">Hello, I'm</h3>
+        <h2 class="about-me-name">John Doe</h2>
+        <p class="about-me-description">
+          Passionate full-stack developer with 5+ years of experience building web applications.
+          Specialized in JavaScript technologies across the whole stack.
+          Strong problem-solving skills and a commitment to creating efficient,
+          scalable, and user-friendly solutions.
+        </p>
+        <div class="about-me-actions">
+          <a href="#" class="btn btn-primary">
+            <i class="fas fa-file-alt"></i> View CV
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fas fa-envelope"></i> Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Tech Skills Section -->
+    <section class="tech-skill">
+      
+
     <header>
       <h1>Technical Skills & Expertise</h1>
       <p class="subtitle">A comprehensive overview of my technical proficiencies across front-end, back-end, databases, and development tools</p>
@@ -495,14 +611,23 @@
       <div class="tab" data-category="database">Databases</div>
       <div class="tab" data-category="tool">Dev Tools</div>
     </div>
+    
+    </section>
 
     <div class="skills-container" id="skillsContainer"></div>
 
     <h2>Featured Projects</h2>
     <div class="projects-container" id="projectsContainer"></div>
 
-    <h2>Professional Experience</h2>
-    <div class="timeline" id="timeline"></div>
+    <div class="timeline-section">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline" id="workTimeline"></div>
+    </div>
+
+    <div class="timeline-section">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline" id="educationTimeline"></div>
+    </div>
 
     <footer>
       &copy; <span id="year"></span> Professional Skills Portfolio. Continuously updated.
@@ -671,20 +796,20 @@
         type: "work"
       },
       {
-        title: "Web Development Bootcamp",
-        company: "Code Academy",
-        date: "2017",
-        description: "Completed intensive 12-week coding bootcamp focused on full stack JavaScript development. Built multiple projects including a social media platform and e-commerce site.",
-        technologies: ["JavaScript", "HTML/CSS", "Node.js", "MongoDB"],
-        type: "education"
-      },
-      {
         title: "Junior Web Developer",
         company: "Web Craft Studios",
         date: "2016 - 2018",
         description: "Built and maintained websites for small businesses using WordPress and custom HTML/CSS/JavaScript solutions. Assisted with SEO optimizations.",
         technologies: ["WordPress", "PHP", "JavaScript", "jQuery"],
         type: "work"
+      },
+      {
+        title: "Web Development Bootcamp",
+        company: "Code Academy",
+        date: "2017",
+        description: "Completed intensive 12-week coding bootcamp focused on full stack JavaScript development. Built multiple projects including a social media platform and e-commerce site.",
+        technologies: ["JavaScript", "HTML/CSS", "Node.js", "MongoDB"],
+        type: "education"
       },
       {
         title: "Bachelor's in Computer Science",
@@ -698,7 +823,8 @@
 
     const container = document.getElementById('skillsContainer');
     const projectsContainer = document.getElementById('projectsContainer');
-    const timelineContainer = document.getElementById('timeline');
+    const workTimeline = document.getElementById('workTimeline');
+    const educationTimeline = document.getElementById('educationTimeline');
     const tabs = document.querySelectorAll('.tab');
     const yearSpan = document.getElementById('year');
 
@@ -755,31 +881,31 @@
       });
     }
 
-    function renderTimeline() {
-      timelineContainer.innerHTML = '';
+    function renderTimeline(container, items) {
+      container.innerHTML = '';
       
-      experiences.forEach((exp, index) => {
-        const item = document.createElement('div');
-        item.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
+      items.forEach((item, index) => {
+        const timelineItem = document.createElement('div');
+        timelineItem.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
         
-        const iconClass = exp.type === 'work' ? 'fas fa-briefcase' : 'fas fa-graduation-cap';
-        const iconColor = exp.type === 'work' ? 'var(--primary)' : '#4cc9f0';
+        const iconClass = item.type === 'work' ? 'fas fa-briefcase' : 'fas fa-graduation-cap';
+        const iconColor = item.type === 'work' ? 'var(--primary)' : '#4cc9f0';
         
-        item.innerHTML = `
+        timelineItem.innerHTML = `
           <div class="timeline-content">
-            <div class="timeline-date">${exp.date}</div>
-            <h3 class="timeline-title">${exp.title}</h3>
+            <div class="timeline-date">${item.date}</div>
+            <h3 class="timeline-title">${item.title}</h3>
             <span class="timeline-company">
               <i class="${iconClass}" style="color: ${iconColor}; margin-right: 5px;"></i>
-              ${exp.company}
+              ${item.company}
             </span>
-            <p class="timeline-description">${exp.description}</p>
+            <p class="timeline-description">${item.description}</p>
             <div class="timeline-tech">
-              ${exp.technologies.map(tech => `<span class="timeline-tech-badge">${tech}</span>`).join('')}
+              ${item.technologies.map(tech => `<span class="timeline-tech-badge">${tech}</span>`).join('')}
             </div>
           </div>
         `;
-        timelineContainer.appendChild(item);
+        container.appendChild(timelineItem);
       });
     }
 
@@ -794,7 +920,13 @@
     // Initial render
     renderSkills('all');
     renderProjects();
-    renderTimeline();
+    
+    // Separate work and education timelines
+    const workExperiences = experiences.filter(exp => exp.type === 'work');
+    const educationExperiences = experiences.filter(exp => exp.type === 'education');
+    
+    renderTimeline(workTimeline, workExperiences);
+    renderTimeline(educationTimeline, educationExperiences);
   </script>
 </body>
 </html>
