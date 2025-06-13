@@ -167,7 +167,9 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 2rem;
+      
     }
+    
 
     .skill-card {
       background-color: var(--card-bg);
@@ -831,27 +833,57 @@
     // Set current year in footer
     yearSpan.textContent = new Date().getFullYear();
 
-    function renderSkills(filter) {
-      container.innerHTML = '';
-      const filtered = filter === 'all' ? skills : skills.filter(skill => skill.category === filter);
+    // Add this at the top with other constants
+const skillsPerPage = 6;
 
-      if (filtered.length === 0) {
-        container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--subtext);">No skills found in this category</div>`;
-        return;
-      }
+// Modify the renderSkills function
+function renderSkills(filter, showAll = false) {
+  container.innerHTML = '';
+  let filtered = filter === 'all' ? [...skills] : skills.filter(skill => skill.category === filter);
+  
+  const skillsToShow = (filter === 'all' && !showAll) ? filtered.slice(0, skillsPerPage) : filtered;
+  
+  if (skillsToShow.length === 0) {
+    container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--subtext);">No skills found in this category</div>`;
+    return;
+  }
+  
+  skillsToShow.forEach(skill => {
+    const card = document.createElement('div');
+    card.className = 'skill-card';
+    card.innerHTML = `
+      <span class="skill-category">${skill.category.toUpperCase()}</span>
+      <i class="skill-icon ${skill.icon}"></i>
+      <div class="skill-name">${skill.name}</div>
+      <div class="skill-description">${skill.description}</div>
+    `;
+    container.appendChild(card);
+  });
+  
+  // Add "View All" button only for "All Skills" tab when not showing all
+  if (filter === 'all' && !showAll && filtered.length > skillsPerPage) {
+    const viewAllBtn = document.createElement('button');
+    viewAllBtn.className = 'btn btn-primary';
+    viewAllBtn.style.gridColumn = '1 / -1';
+    viewAllBtn.style.margin = '0 auto';
+    viewAllBtn.style.width = '200px';
+    viewAllBtn.innerHTML = '<i class="fas fa-eye"></i> View All Skills';
+    viewAllBtn.addEventListener('click', () => {
+      renderSkills('all', true);
+    });
+    container.appendChild(viewAllBtn);
+  }
+}
 
-      filtered.forEach(skill => {
-        const card = document.createElement('div');
-        card.className = 'skill-card';
-        card.innerHTML = `
-          <span class="skill-category">${skill.category.toUpperCase()}</span>
-          <i class="skill-icon ${skill.icon}"></i>
-          <div class="skill-name">${skill.name}</div>
-          <div class="skill-description">${skill.description}</div>
-        `;
-        container.appendChild(card);
-      });
-    }
+// Update the tab click event listener
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderSkills(tab.dataset.category);
+  });
+});
+
 
     function renderProjects() {
       projectsContainer.innerHTML = '';
