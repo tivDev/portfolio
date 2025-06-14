@@ -28,20 +28,163 @@
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      padding: 2rem;
       line-height: 1.6;
     }
 
+    /* Navbar Styles */
+    .navbar {
+      background-color: white;
+      box-shadow: var(--shadow);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo i {
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #4361ee, #3a0ca3);
+      color: white;
+      padding: 8rem 2rem 6rem;
+      text-align: center;
+      margin-top: 60px; /* To account for fixed navbar */
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .hero-btn-primary {
+      background-color: white;
+      color: var(--primary);
+    }
+
+    .hero-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .hero-btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Main Content */
     .container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 2rem;
     }
 
     header {
@@ -167,7 +310,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 2rem;
-      
     }
     
 
@@ -477,11 +619,94 @@
       margin-top: 4rem;
       color: var(--subtext);
       font-size: 0.9rem;
+      padding: 2rem;
+      background-color: white;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    .mobile-menu .nav-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu .nav-links a {
+      font-size: 1.5rem;
+    }
+
+    .close-menu-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .about-me {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .about-me-actions {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 768px) {
       body {
-        padding: 1.5rem;
+        padding: 0;
+      }
+      
+      .navbar {
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero {
+        padding: 6rem 1rem 4rem;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
       }
       
       h1 {
@@ -493,13 +718,7 @@
       }
       
       .about-me {
-        flex-direction: column;
-        text-align: center;
         padding: 2rem;
-      }
-      
-      .about-me-actions {
-        justify-content: center;
       }
       
       .skills-container {
@@ -535,8 +754,21 @@
     }
 
     @media (max-width: 480px) {
-      body {
+      .container {
         padding: 1rem;
+      }
+      
+      .hero {
+        padding: 5rem 1rem 3rem;
+      }
+      
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
       }
       
       .tabs {
@@ -573,10 +805,61 @@
 </head>
 
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">
+        <i class="fas fa-code"></i>
+        <span>John Doe</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu-btn" id="closeMenuBtn">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">Full Stack Developer & Tech Enthusiast</h1>
+      <p class="hero-subtitle">Building innovative web solutions with modern technologies and clean code</p>
+      <div class="hero-cta">
+        <a href="#projects" class="hero-btn hero-btn-primary">
+          <i class="fas fa-laptop-code"></i> View My Work
+        </a>
+        <a href="#contact" class="hero-btn hero-btn-secondary">
+          <i class="fas fa-paper-plane"></i> Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
   <div class="container">
-    
-        <!-- About Me Section -->
-    <section class="about-me">
+    <!-- About Me Section -->
+    <section class="about-me" id="about">
       <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Profile Picture" class="about-me-avatar">
       <div class="about-me-content">
         <h3 class="about-me-title">Hello, I'm</h3>
@@ -597,42 +880,62 @@
         </div>
       </div>
     </section>
-    <!-- Tech Skills Section -->
-    <section class="tech-skill">
-      
-
-    <header>
-      <h1>Technical Skills & Expertise</h1>
-      <p class="subtitle">A comprehensive overview of my technical proficiencies across front-end, back-end, databases, and development tools</p>
-    </header>
-
-    <div class="tabs" id="tabs">
-      <div class="tab active" data-category="all">All Skills</div>
-      <div class="tab" data-category="frontend">Front-End</div>
-      <div class="tab" data-category="backend">Back-End</div>
-      <div class="tab" data-category="database">Databases</div>
-      <div class="tab" data-category="tool">Dev Tools</div>
-    </div>
     
+    <!-- Tech Skills Section -->
+    <section class="tech-skill" id="skills">
+      <header>
+        <h1>Technical Skills & Expertise</h1>
+        <p class="subtitle">A comprehensive overview of my technical proficiencies across front-end, back-end, databases, and development tools</p>
+      </header>
+
+      <div class="tabs" id="tabs">
+        <div class="tab active" data-category="all">All Skills</div>
+        <div class="tab" data-category="frontend">Front-End</div>
+        <div class="tab" data-category="backend">Back-End</div>
+        <div class="tab" data-category="database">Databases</div>
+        <div class="tab" data-category="tool">Dev Tools</div>
+      </div>
     </section>
 
     <div class="skills-container" id="skillsContainer"></div>
 
-    <h2>Featured Projects</h2>
-    <div class="projects-container" id="projectsContainer"></div>
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-container" id="projectsContainer"></div>
+    </section>
 
-    <div class="timeline-section">
-      <h2 class="section-title">Work Experience</h2>
-      <div class="timeline" id="workTimeline"></div>
-    </div>
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="timeline-section">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline" id="workTimeline"></div>
+      </div>
 
-    <div class="timeline-section">
-      <h2 class="section-title">Education</h2>
-      <div class="timeline" id="educationTimeline"></div>
-    </div>
+      <div class="timeline-section">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline" id="educationTimeline"></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="margin-top: 4rem;">
+      <h2 class="section-title">Get In Touch</h2>
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <p style="margin-bottom: 2rem; color: var(--subtext);">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!</p>
+        <a href="mailto:john.doe@example.com" class="btn btn-primary" style="font-size: 1.1rem;">
+          <i class="fas fa-envelope"></i> Send Me a Message
+        </a>
+      </div>
+    </section>
 
     <footer>
-      &copy; <span id="year"></span> Professional Skills Portfolio. Continuously updated.
+      &copy; <span id="year"></span> John Doe. All rights reserved.
+      <div style="margin-top: 1rem;">
+        <a href="https://github.com" target="_blank" style="color: var(--text); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" style="color: var(--text); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" style="color: var(--text); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+      </div>
     </footer>
   </div>
 
@@ -829,61 +1132,83 @@
     const educationTimeline = document.getElementById('educationTimeline');
     const tabs = document.querySelectorAll('.tab');
     const yearSpan = document.getElementById('year');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
     // Set current year in footer
     yearSpan.textContent = new Date().getFullYear();
 
-    // Add this at the top with other constants
-const skillsPerPage = 6;
-
-// Modify the renderSkills function
-function renderSkills(filter, showAll = false) {
-  container.innerHTML = '';
-  let filtered = filter === 'all' ? [...skills] : skills.filter(skill => skill.category === filter);
-  
-  const skillsToShow = (filter === 'all' && !showAll) ? filtered.slice(0, skillsPerPage) : filtered;
-  
-  if (skillsToShow.length === 0) {
-    container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--subtext);">No skills found in this category</div>`;
-    return;
-  }
-  
-  skillsToShow.forEach(skill => {
-    const card = document.createElement('div');
-    card.className = 'skill-card';
-    card.innerHTML = `
-      <span class="skill-category">${skill.category.toUpperCase()}</span>
-      <i class="skill-icon ${skill.icon}"></i>
-      <div class="skill-name">${skill.name}</div>
-      <div class="skill-description">${skill.description}</div>
-    `;
-    container.appendChild(card);
-  });
-  
-  // Add "View All" button only for "All Skills" tab when not showing all
-  if (filter === 'all' && !showAll && filtered.length > skillsPerPage) {
-    const viewAllBtn = document.createElement('button');
-    viewAllBtn.className = 'btn btn-primary';
-    viewAllBtn.style.gridColumn = '1 / -1';
-    viewAllBtn.style.margin = '0 auto';
-    viewAllBtn.style.width = '200px';
-    viewAllBtn.innerHTML = '<i class="fas fa-eye"></i> View All Skills';
-    viewAllBtn.addEventListener('click', () => {
-      renderSkills('all', true);
+    // Mobile menu functionality
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
     });
-    container.appendChild(viewAllBtn);
-  }
-}
 
-// Update the tab click event listener
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    renderSkills(tab.dataset.category);
-  });
-});
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
 
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Skills pagination
+    const skillsPerPage = 6;
+
+    function renderSkills(filter, showAll = false) {
+      container.innerHTML = '';
+      let filtered = filter === 'all' ? [...skills] : skills.filter(skill => skill.category === filter);
+      
+      const skillsToShow = (filter === 'all' && !showAll) ? filtered.slice(0, skillsPerPage) : filtered;
+      
+      if (skillsToShow.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--subtext);">No skills found in this category</div>`;
+        return;
+      }
+      
+      skillsToShow.forEach(skill => {
+        const card = document.createElement('div');
+        card.className = 'skill-card';
+        card.innerHTML = `
+          <span class="skill-category">${skill.category.toUpperCase()}</span>
+          <i class="skill-icon ${skill.icon}"></i>
+          <div class="skill-name">${skill.name}</div>
+          <div class="skill-description">${skill.description}</div>
+        `;
+        container.appendChild(card);
+      });
+      
+      // Add "View All" button only for "All Skills" tab when not showing all
+      if (filter === 'all' && !showAll && filtered.length > skillsPerPage) {
+        const viewAllBtn = document.createElement('button');
+        viewAllBtn.className = 'btn btn-primary';
+        viewAllBtn.style.gridColumn = '1 / -1';
+        viewAllBtn.style.margin = '0 auto';
+        viewAllBtn.style.width = '200px';
+        viewAllBtn.innerHTML = '<i class="fas fa-eye"></i> View All Skills';
+        viewAllBtn.addEventListener('click', () => {
+          renderSkills('all', true);
+        });
+        container.appendChild(viewAllBtn);
+      }
+    }
 
     function renderProjects() {
       projectsContainer.innerHTML = '';
