@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional Tech Skills Portfolio</title>
+  <meta name="description" content="Showcase of my technical skills and expertise">
+
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">
+        <i class="fas fa-code"></i>
+        <span>Tiv</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu-btn" id="closeMenuBtn">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">Full Stack Developer & Tech Enthusiast</h1>
+      <p class="hero-subtitle">Building innovative web solutions with modern technologies and clean code</p>
+      <div class="hero-cta">
+        <a href="#projects" class="hero-btn hero-btn-primary">
+          <i class="fas fa-laptop-code"></i> View My Work
+        </a>
+        <a href="#contact" class="hero-btn hero-btn-secondary">
+          <i class="fas fa-paper-plane"></i> Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- About Me Section -->
+    <section class="about-me" id="about">
+      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Profile Picture" class="about-me-avatar">
+      <div class="about-me-content">
+        <h3 class="about-me-title">Hello, I'm</h3>
+        <h2 class="about-me-name">Tiv</h2>
+        <p class="about-me-description">
+          Passionate full-stack developer with 5+ years of experience building web applications.
+          Specialized in JavaScript technologies across the whole stack.
+          Strong problem-solving skills and a commitment to creating efficient,
+          scalable, and user-friendly solutions.
+        </p>
+        <div class="about-me-actions">
+          <a href="#" class="btn btn-primary">
+            <i class="fas fa-file-alt"></i> View CV
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fas fa-envelope"></i> Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tech Skills Section -->
+    <section class="tech-skill" id="skills">
+      <header>
+        <h1>Technical Skills & Expertise</h1>
+        <p class="subtitle">A comprehensive overview of my technical proficiencies across front-end, back-end, databases, and development tools</p>
+      </header>
+
+      <div class="tabs" id="tabs">
+        <div class="tab active" data-category="all">All Skills</div>
+        <div class="tab" data-category="frontend">Front-End</div>
+        <div class="tab" data-category="backend">Back-End</div>
+        <div class="tab" data-category="database">Databases</div>
+        <div class="tab" data-category="tool">Dev Tools</div>
+      </div>
+    </section>
+
+    <div class="skills-container" id="skillsContainer"></div>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-container" id="projectsContainer"></div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="timeline-section">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline" id="workTimeline"></div>
+      </div>
+
+      <div class="timeline-section">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline" id="educationTimeline"></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="margin-top: 4rem;">
+      <h2 class="section-title">Get In Touch</h2>
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <p style="margin-bottom: 2rem; color: var(--subtext);">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!</p>
+        <a href="mailto:john.doe@example.com" class="btn btn-primary" style="font-size: 1.1rem;">
+          <i class="fas fa-envelope"></i> Send Me a Message
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      &copy; <span id="year"></span> Tiv. All rights reserved.
+      <div style="margin-top: 1rem;">
+        <a href="https://github.com" target="_blank" style="color: var(--text); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" style="color: var(--text); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com" target="_blank" style="color: var(--text); margin: 0 0.5rem; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+      </div>
+    </footer>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
