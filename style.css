@@ -532,6 +532,7 @@ h3 {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     position: relative;
+    transition: var(--transition);
 }
 
 .timeline-content:hover {
