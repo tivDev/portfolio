@@ -108,36 +108,28 @@ const skills = [
 
 const projects = [
     {
-        title: "E-Commerce Platform",
-        description: "A full-featured online store with product catalog, shopping cart, and secure checkout system. Implemented user authentication, product reviews, and admin dashboard.",
-        technologies: ["React", "Node.js", "MongoDB", "Express", "Redux"],
-        image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        title: "Push Notification App",
+        description: "A push notification service for web and mobile apps, delivering real-time updates and alerts to users.",
+        technologies: ["HTML/CSS", "JavaScript", "Python"],
+        image: "https://sinch.com/wp-content/uploads/2024/08/Sinch-Blog-What-is-a-push-notification-handset_1400x1014-2.png",
         codeUrl: "https://github.com/example/ecommerce",
         demoUrl: "https://ecommerce.example.com"
     },
     {
-        title: "Task Management App",
-        description: "Productivity application for organizing tasks with drag-and-drop functionality, due date reminders, and team collaboration features.",
-        technologies: ["Vue.js", "Firebase", "Tailwind CSS", "Vuex"],
-        image: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        title: "Telegram Bot Send Message",
+        description: "A Python script that sends a message to a Telegram chat using the Telegram Bot API.",
+        technologies: ["Python"],
+        image: "https://cdn.umnico.com/production/landing/en-article26.png",
+        codeUrl: "https://github.com/example/ecommerce",
+        demoUrl: "https://ecommerce.example.com"
+    },
+    {
+        title: "Socket.io Realtime data",
+        description: "A web application that displays real-time data using Socket.io and Node.js.",
+        technologies: ["HTML/CSS", "JavaScript", "Node.js","MySQL","Socket.io"],
+        image: "https://miro.medium.com/v2/resize:fit:1400/1*f0txX3ZKNu6tYilnteFyLA.jpeg",
         codeUrl: "https://github.com/example/task-manager",
         demoUrl: "https://tasks.example.com"
-    },
-    {
-        title: "Weather Dashboard",
-        description: "Real-time weather application with 5-day forecast, location search, and interactive maps. Fetches data from multiple weather APIs.",
-        technologies: ["JavaScript", "OpenWeather API", "Chart.js", "Bootstrap"],
-        image: "https://images.unsplash.com/photo-1561484930-974554019ade?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        codeUrl: "https://github.com/example/weather-app",
-        demoUrl: "https://weather.example.com"
-    },
-    {
-        title: "Social Media Analytics",
-        description: "Dashboard for tracking social media metrics across multiple platforms with data visualization and export capabilities.",
-        technologies: ["Python", "Django", "PostgreSQL", "D3.js"],
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        codeUrl: "https://github.com/example/social-analytics",
-        demoUrl: "https://analytics.example.com"
     }
 ];
 
@@ -147,7 +139,7 @@ const experiences = [
         company: "103 DiTech",
         date: "2025 - Present",
         description: "Design, develop, and maintain ERPNext apps for clients. Build APIs, automate workflows, enhance modules, and improve UIs with HTML/CSS/JavaScript.",
-        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript", "jQuery", "GitLab"],
+        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript","Bootstrap", "jQuery","Tailwind CSS", "GitLab"],
         type: "work"
     },
     {
