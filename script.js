@@ -180,14 +180,6 @@ const experiences = [
         type: "work"
     },
     {
-        title: "Bachelor's in Computer Science",
-        company: "Code Academy",
-        date: "2025-Present",
-        description: "Completed intensive 12-week coding bootcamp focused on full stack JavaScript development. Built multiple projects including a social media platform and e-commerce site.",
-        technologies: ["Java", "C#", "Node.js", "MongoDB"],
-        type: "education"
-    },
-    {
         title: "Associate's in Web Development",
         company: "PNC",
         date: "2022 - 2024",
