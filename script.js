@@ -143,43 +143,35 @@ const projects = [
 
 const experiences = [
     {
-        title: "Senior Frontend Developer",
-        company: "Tech Innovations Inc.",
-        date: "2021 - Present",
-        description: "Lead the frontend development team in building responsive web applications using React and TypeScript. Implemented performance optimizations that reduced load times by 40%.",
-        technologies: ["React", "TypeScript", "Redux", "GraphQL", "Jest"],
+        title: "Backend ERPNext Developer",
+        company: "103 DiTech",
+        date: "2025 - Present",
+        description: "Design, develop, and maintain ERPNext apps for clients. Build APIs, automate workflows, enhance modules, and improve UIs with HTML/CSS/JavaScript.",
+        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript", "jQuery", "GitLab"],
         type: "work"
     },
     {
-        title: "Full Stack Developer",
-        company: "Digital Solutions LLC",
-        date: "2018 - 2021",
-        description: "Developed and maintained full stack applications using Node.js, Express, and MongoDB. Collaborated with UX designers to implement responsive interfaces.",
-        technologies: ["Node.js", "Express", "MongoDB", "React", "Docker"],
+        title: "Internship - Backend ERPNext Developer",
+        company: "103 DiTech",
+        date: "2024",
+        description: "Assisted in developing ERPNext modules and simple APIs, configuring DocTypes, and doing light front-end work with HTML/CSS/JavaScript.",
+        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript", "jQuery", "GitLab"],
         type: "work"
-    },
-    {
-        title: "Junior Web Developer",
-        company: "Web Craft Studios",
-        date: "2016 - 2018",
-        description: "Built and maintained websites for small businesses using WordPress and custom HTML/CSS/JavaScript solutions. Assisted with SEO optimizations.",
-        technologies: ["WordPress", "PHP", "JavaScript", "jQuery"],
-        type: "work"
-    },
-    {
-        title: "Web Development Bootcamp",
-        company: "Code Academy",
-        date: "2017",
-        description: "Completed intensive 12-week coding bootcamp focused on full stack JavaScript development. Built multiple projects including a social media platform and e-commerce site.",
-        technologies: ["JavaScript", "HTML/CSS", "Node.js", "MongoDB"],
-        type: "education"
     },
     {
         title: "Bachelor's in Computer Science",
+        company: "Code Academy",
+        date: "2025-Present",
+        description: "Completed intensive 12-week coding bootcamp focused on full stack JavaScript development. Built multiple projects including a social media platform and e-commerce site.",
+        technologies: ["Java", "C#", "Node.js", "MongoDB"],
+        type: "education"
+    },
+    {
+        title: "Associate's in Web Development",
         company: "State University",
-        date: "2012 - 2016",
-        description: "Graduated with honors. Focused on software engineering principles, algorithms, and database design.",
-        technologies: ["Java", "C++", "SQL", "Data Structures"],
+        date: "2022 - 2024",
+        description: "Graduated with honor from Passerelles numériques Cambodia(PNC). Focused on software engineering principles, algorithms, data structures, and database design.",
+        technologies: ["HTML/CSS", "JavaScript", "Bootstrap", "PHP", "Node.js", "Vue.js", "Python", "Laravel", "MySQL", "Data Structures", "Linux", "Git", "GitHub", "Jira", , "Figma", "Firebase", "Postman"],
         type: "education"
     }
 ];
@@ -256,11 +248,9 @@ function renderSkills(filter, showAll = false) {
     // Add "View All" button only for "All Skills" tab when not showing all
     if (filter === 'all' && !showAll && filtered.length > skillsPerPage) {
         const viewAllBtn = document.createElement('button');
-        viewAllBtn.className = 'btn btn-primary';
-        viewAllBtn.style.gridColumn = '1 / -1';
-        viewAllBtn.style.margin = '0 auto';
+        viewAllBtn.className = 'view-all-btn';
         viewAllBtn.style.width = '200px';
-        viewAllBtn.innerHTML = '<i class="fas fa-eye"></i> View All Skills';
+        viewAllBtn.innerHTML = 'View All <i class="fa-solid fa-arrow-right"></i>';
         viewAllBtn.addEventListener('click', () => {
             renderSkills('all', true);
         });

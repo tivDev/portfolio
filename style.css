@@ -236,7 +236,8 @@ h3 {
 .about-me-name {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin: 0rem !important;
+    padding: 0rem;
     color: var(--text);
 }
 
@@ -365,6 +366,19 @@ h3 {
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
+}
+
+.view-all-btn{
+    padding: 0;
+    background-color: unset;
+    color: var(--primary);
+    text-align: left;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+}
+.view-all-btn:hover{
+    color: #4362eeb2;
 }
 
 /* Projects Section */
@@ -570,12 +584,13 @@ h3 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.5rem;
+    padding: 0.3rem 1rem;
     border-radius: var(--radius);
     font-weight: 500;
     text-decoration: none;
     transition: var(--transition);
     font-size: 0.95rem;
+    gap: 10px;
     cursor: pointer;
 }
 
