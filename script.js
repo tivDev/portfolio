@@ -137,6 +137,14 @@ const projects = [
         image: "https://miro.medium.com/v2/resize:fit:1400/1*f0txX3ZKNu6tYilnteFyLA.jpeg",
         codeUrl: "https://github.com/example/task-manager",
         demoUrl: "https://tasks.example.com"
+    },
+    {
+        title: "Task Management",
+        description: "A web application that allows users to create, manage, and track tasks.",
+        technologies: ["HTML/CSS", "JavaScript", "Vue.js"],
+        image: "https://www.cflowapps.com/wp-content/uploads/2018/07/task-management-process.png",
+        codeUrl: "https://github.com/example/task-manager",
+        demoUrl: "https://tasks.example.com"
     }
 ];
 
