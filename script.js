@@ -56,6 +56,13 @@ const skills = [
         level: "Intermediate"
     },
     {
+        name: "MariaDB",
+        icon: "fas fa-database",
+        description: "NoSQL database design, aggregation pipelines, and document-oriented storage.",
+        category: "database",
+        level: "Intermediate"
+    },
+    {
         name: "MongoDB",
         icon: "fas fa-database",
         description: "NoSQL database design, aggregation pipelines, and document-oriented storage.",
