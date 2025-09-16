@@ -112,8 +112,8 @@ const projects = [
         description: "A push notification service for web and mobile apps, delivering real-time updates and alerts to users.",
         technologies: ["HTML/CSS", "JavaScript", "Python"],
         image: "https://sinch.com/wp-content/uploads/2024/08/Sinch-Blog-What-is-a-push-notification-handset_1400x1014-2.png",
-        codeUrl: "https://github.com/example/ecommerce",
-        demoUrl: "https://ecommerce.example.com"
+        codeUrl: "https://github.com/tivDev/Firebase_Web_Push_Notifications_Python",
+        demoUrl: "https://fcm-token-iota.vercel.app/"
     },
     {
         title: "Telegram Bot Send Message",
