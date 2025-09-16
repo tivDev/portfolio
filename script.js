@@ -98,6 +98,13 @@ const skills = [
         level: "Advanced"
     },
     {
+        name: "Firebase",
+        icon: "fa-solid fa-fire",
+        description: "Real-time database, authentication, and cloud storage integration.",
+        category: "tool",
+        level: "Advanced"
+    },
+    {
         name: "TypeScript",
         icon: "fas fa-code",
         description: "Strongly typed JavaScript for more robust and maintainable codebases.",
@@ -108,6 +115,13 @@ const skills = [
         name: "Docker",
         icon: "fab fa-docker",
         description: "Containerization for consistent development and deployment environments.",
+        category: "tool",
+        level: "Beginner"
+    },
+    {
+        name: "Ubuntu",
+        icon: "fa-brands fa-ubuntu",
+        description: "Linux-based operating system for server and desktop development.",
         category: "tool",
         level: "Beginner"
     }
