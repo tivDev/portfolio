@@ -168,12 +168,13 @@ const experiences = [
     },
     {
         title: "Associate's in Web Development",
-        company: "State University",
+        company: "PNC",
         date: "2022 - 2024",
-        description: "Graduated with honor from Passerelles numériques Cambodia(PNC). Focused on software engineering principles, algorithms, data structures, and database design.",
-        technologies: ["HTML/CSS", "JavaScript", "Bootstrap", "PHP", "Node.js", "Vue.js", "Python", "Laravel", "MySQL", "Data Structures", "Linux", "Git", "GitHub", "Jira", , "Figma", "Firebase", "Postman"],
+        description: "Graduated with honors from Passerelles numériques Cambodia (PNC). Studied software engineering, algorithms, databases, and modern web technologies.",
+        technologies: ["HTML/CSS", "JavaScript", "Bootstrap", "PHP", "Node.js", "Vue.js", "Python", "Laravel", "MySQL", "Data Structures", "Linux", "Git", "GitHub", "Jira", "Figma", "Firebase", "Postman"],
         type: "education"
     }
+
 ];
 
 const container = document.getElementById('skillsContainer');
