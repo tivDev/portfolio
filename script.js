@@ -158,7 +158,7 @@ const projects = [
         technologies: ["HTML/CSS", "JavaScript", "Vue.js"],
         image: "assets/task-management-process.png",
         codeUrl: "https://github.com/example/task-manager",
-        // demoUrl: "https://tasks.example.com"
+        demoUrl: "https://vue-pinia-git-main-tivdevs-projects.vercel.app/"
     }
 ];
 
