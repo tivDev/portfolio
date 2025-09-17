@@ -168,7 +168,7 @@ const experiences = [
         company: "103 DiTech",
         date: "2025 - Present",
         description: "Design, develop, and maintain ERPNext apps for clients. Build APIs, automate workflows, enhance modules, and improve UIs with HTML/CSS/JavaScript.",
-        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript", "Bootstrap", "jQuery", "Tailwind CSS", "GitLab"],
+        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript", "jQuery", "GitLab","Ubuntu"],
         type: "work"
     },
     {
@@ -176,7 +176,7 @@ const experiences = [
         company: "103 DiTech",
         date: "2024",
         description: "Assisted in developing ERPNext modules and simple APIs, configuring DocTypes, and doing light front-end work with HTML/CSS/JavaScript.",
-        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript", "jQuery", "GitLab"],
+        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript", "jQuery", "GitLab","Ubuntu"],
         type: "work"
     },
     {
