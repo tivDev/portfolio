@@ -80,28 +80,28 @@ const skills = [
         name: "Git",
         icon: "fab fa-git-alt",
         description: "Version control, branching strategies, and collaborative workflows.",
-        category: "tool",
+        category: "other",
         level: "Advanced"
     },
     {
         name: "NPM/Yarn",
         icon: "fab fa-npm",
         description: "Package management, script automation, and dependency management.",
-        category: "tool",
+        category: "other",
         level: "Advanced"
     },
     {
         name: "VS Code",
         icon: "fas fa-code",
         description: "Customized development environment with essential extensions and shortcuts.",
-        category: "tool",
+        category: "other",
         level: "Advanced"
     },
     {
         name: "Firebase",
         icon: "fa-solid fa-fire",
         description: "Real-time database, authentication, and cloud storage integration.",
-        category: "tool",
+        category: "other",
         level: "Advanced"
     },
     {
@@ -115,14 +115,14 @@ const skills = [
         name: "Docker",
         icon: "fab fa-docker",
         description: "Containerization for consistent development and deployment environments.",
-        category: "tool",
+        category: "other",
         level: "Beginner"
     },
     {
         name: "Ubuntu",
         icon: "fa-brands fa-ubuntu",
         description: "Linux-based operating system for server and desktop development.",
-        category: "tool",
+        category: "other",
         level: "Beginner"
     }
 ];
@@ -132,7 +132,7 @@ const projects = [
         title: "Push Notification App",
         description: "A push notification service for web and mobile apps, delivering real-time updates and alerts to users.",
         technologies: ["HTML/CSS", "JavaScript", "Python"],
-        image: "https://sinch.com/wp-content/uploads/2024/08/Sinch-Blog-What-is-a-push-notification-handset_1400x1014-2.png",
+        image: "assets/notification.webp",
         codeUrl: "https://github.com/tivDev/Firebase_Web_Push_Notifications_Python",
         demoUrl: "https://fcm-token-iota.vercel.app/"
     },
@@ -140,25 +140,25 @@ const projects = [
         title: "Telegram Bot Send Message",
         description: "A Python script that sends a message to a Telegram chat using the Telegram Bot API.",
         technologies: ["Python"],
-        image: "https://cdn.umnico.com/production/landing/en-article26.png",
-        codeUrl: "https://github.com/example/ecommerce",
-        demoUrl: "https://ecommerce.example.com"
+        image: "assets/telegram-bot.png",
+        codeUrl: "https://github.com/tivDev/telegram_bot_send_message",
+        // demoUrl: "https://ecommerce.example.com"
     },
     {
         title: "Socket.io Realtime data",
         description: "A web application that displays real-time data using Socket.io and Node.js.",
-        technologies: ["HTML/CSS", "JavaScript", "Node.js","MySQL","Socket.io"],
-        image: "https://miro.medium.com/v2/resize:fit:1400/1*f0txX3ZKNu6tYilnteFyLA.jpeg",
+        technologies: ["HTML/CSS", "JavaScript", "Node.js", "MySQL", "Socket.io"],
+        image: "assets/node-socket.jpg",
         codeUrl: "https://github.com/example/task-manager",
-        demoUrl: "https://tasks.example.com"
+        // demoUrl: "https://tasks.example.com"
     },
     {
         title: "Task Management",
         description: "A web application that allows users to create, manage, and track tasks.",
         technologies: ["HTML/CSS", "JavaScript", "Vue.js"],
-        image: "https://www.cflowapps.com/wp-content/uploads/2018/07/task-management-process.png",
+        image: "assets/task-management-process.png",
         codeUrl: "https://github.com/example/task-manager",
-        demoUrl: "https://tasks.example.com"
+        // demoUrl: "https://tasks.example.com"
     }
 ];
 
@@ -168,7 +168,7 @@ const experiences = [
         company: "103 DiTech",
         date: "2025 - Present",
         description: "Design, develop, and maintain ERPNext apps for clients. Build APIs, automate workflows, enhance modules, and improve UIs with HTML/CSS/JavaScript.",
-        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript","Bootstrap", "jQuery","Tailwind CSS", "GitLab"],
+        technologies: ["Python", "Frappe Framework", "Jinja2", "HTML", "CSS", "JavaScript", "Bootstrap", "jQuery", "Tailwind CSS", "GitLab"],
         type: "work"
     },
     {
@@ -196,30 +196,21 @@ const workTimeline = document.getElementById('workTimeline');
 const educationTimeline = document.getElementById('educationTimeline');
 const tabs = document.querySelectorAll('.tab');
 const yearSpan = document.getElementById('year');
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const closeMenuBtn = document.getElementById('closeMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 
-// Set current year in footer
-yearSpan.textContent = new Date().getFullYear();
+const aEls = document.querySelectorAll('li a');
+aEls.forEach(aEl => {
+    aEl.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    })
+})
 
-// Mobile menu functionality
-mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('active');
-    document.body.style.overflow = 'hidden';
-});
-
-closeMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = 'auto';
-});
-
-mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
 });
 
 // Smooth scrolling for anchor links
@@ -290,9 +281,9 @@ function renderProjects() {
               <a href="${project.codeUrl}" target="_blank" class="btn btn-outline">
                 <i class="fas fa-code"></i> View Code
               </a>
-              <a href="${project.demoUrl}" target="_blank" class="btn btn-primary">
+              ${project.demoUrl ? `<a href="${project.demoUrl}" target="_blank" class="btn btn-primary">
                 <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
+              </a>` : ''}
             </div>
           </div>
         `;
