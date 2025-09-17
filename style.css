@@ -114,11 +114,13 @@ body {
 
 /* Hamburger animation */
 .hamburger.active span:nth-child(1) {
+    padding: 1.5px;
     transform: rotate(45deg) translateY(8px);
 }
 
 .hamburger.active span:nth-child(2) {
-    margin: 3.2px 2px;
+    padding: 1.5px;
+    margin: 3px 2px;
     transform: rotate(-45deg) translateY(-8px);
 }
 
